@@ -4,8 +4,66 @@
 @import 'global';
 
 
-
 @import 'media';
 
+.header {
+  padding: 40px 0;
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
+.menu {
+  
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 34px;
+  }
+  
+  &__link {
+    @extend %roboto-400;
+    text-transform: uppercase;
+    color: $accent-text;
+    padding: 0 2px 4px;
+    transition: all .3s;
+  
+    &:hover {
+      color: $accent-color;
+      border-bottom: 1px solid $accent-color;
+    }
+  }
+
+  &__link--active {
+    color: $accent-color;
+    border-bottom: 1px solid $accent-color;
+  }
+}
+
+.user-nav {
+  display: flex;
+  gap: 20px;
+
+  &__link {
+    position: relative;
+  }
+
+  &__num {
+    position: absolute;
+    top: -9px;
+    right: -14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent-color;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+  }
+}
