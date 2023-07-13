@@ -67,3 +67,129 @@
     font-size: 12px;
   }
 }
+
+.footer {
+  background-color: $bg-color;
+
+  &__logo {
+    display: block;
+    margin-bottom: 32px;
+  }
+}
+
+.footer-top {
+  padding: 76px 0 40px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  gap: 30px;
+
+  &__column {
+    flex-grow: 1;
+  }
+
+  &__column:first-child {
+    max-width: 270px;
+  }
+  
+  &__column:nth-child(2) {
+    max-width: 170px;
+  }
+  
+  &__column:nth-child(3) {
+    max-width: 170px;
+  }
+
+  &__column:last-child {
+    max-width: 470px;
+  }
+
+  &__address {
+    font-style: normal;
+    max-width: 264px;
+    margin-bottom: 10px;
+  }
+
+  &__column-title {
+    color: $accent-text;
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
+
+  &__column-text {
+    margin-bottom: 30px;
+  }
+
+  &__column-item {
+    margin-bottom: 10px;
+  }
+
+  &__email,
+  &__phone {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__socials {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__socials-link {
+    path {
+      fill: $main-text;
+      transition: all .3s;
+    }
+
+    &:hover {
+      path {
+        fill: $accent-color;
+      }
+    }
+  }
+}
+
+.form {
+
+
+  &__input {
+    border: none;
+    padding: 8px 18px;
+    line-height: 36px;
+    max-width: 320px;
+    width: 100%;
+    margin-right: 10px;
+    box-shadow: 0 7px 20px rgba(192, 192, 192, 0.3);
+  }
+
+  &__button {
+    border: none;
+    padding: 8px 26px;
+    background-color: $accent-color;
+    text-transform: uppercase;
+    line-height: 36px;
+    color: #fff;
+    @extend %roboto-400;
+    box-shadow: 0 7px 20px rgba(255, 17, 48, 0.3);
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}
+
+.footer-copy {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 28px 0;
+
+  &__payments {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+}
+
+

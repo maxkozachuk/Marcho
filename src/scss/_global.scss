@@ -1,8 +1,19 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Quicksand-Medium', sans-serif;
   font-size: 16px;
   line-height: 26px;
   color: $main-text;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {
@@ -10,3 +21,8 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+a {
+  color: $main-text;
+}
+
