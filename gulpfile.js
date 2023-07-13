@@ -12,9 +12,9 @@ const browserSync = require('browser-sync').create();
 
 const styles = () => {
   return src('src/scss/style.scss')
-    // .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(concat('style.min.css'))
+    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
     .pipe(dest('src/css'))
     .pipe(browserSync.stream());
 };
