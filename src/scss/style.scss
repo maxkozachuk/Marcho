@@ -172,6 +172,7 @@
     @extend %roboto-400;
     box-shadow: 0 7px 20px rgba(255, 17, 48, 0.3);
     cursor: pointer;
+    transition: all .3s;
 
     &:hover {
       background-color: darken($accent-color, 10%);
@@ -191,5 +192,4 @@
     gap: 25px;
   }
 }
-
 
