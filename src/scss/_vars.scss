@@ -19,3 +19,17 @@ $main-text: #8d8d8d;
 
 $accent-color: #fe3e57;
 $bg-color: #f6f6f6;
+
+%btn {
+  padding: 14px 36px;
+  text-transform: uppercase;
+  background-color: $accent-color;
+  @extend %roboto-400;
+  color: #fff;
+  box-shadow: 0 7px 20px rgba(255, 17, 48, 0.3);
+  transition: all .3s;
+
+  &:hover {
+    background-color: darken($accent-color, 10%);
+  }
+}
