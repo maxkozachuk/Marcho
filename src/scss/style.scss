@@ -91,10 +91,7 @@
     max-width: 270px;
   }
   
-  &__column:nth-child(2) {
-    max-width: 170px;
-  }
-  
+  &__column:nth-child(2),
   &__column:nth-child(3) {
     max-width: 170px;
   }
@@ -150,7 +147,6 @@
 }
 
 .form {
-
 
   &__input {
     border: none;
