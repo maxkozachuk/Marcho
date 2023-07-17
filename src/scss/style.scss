@@ -486,3 +486,148 @@
     @extend %btn
   }
 }
+
+.products {
+  padding: 120px 0;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin-bottom: 60px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+    margin-bottom: 60px;
+  }
+
+  &__button {
+    @extend %btn-transparent;
+    margin: 0 auto;
+  }
+}
+
+.product-item {
+  max-width: 370px;
+
+  &:hover {
+
+    .product-item__panel {
+      bottom: 50px;
+    }
+  }
+
+  &--sale {
+    position: relative;
+
+    &::after {
+      content: 'SALE';
+      position: absolute;
+      text-transform: uppercase;
+      color: #fff;
+      @extend %roboto-400;
+      background-color: $accent-color;
+      padding: 2px 10px;
+      top: 25px;
+      left: 25px;
+      box-shadow: 0 7px 20px rgba(254, 62, 87, 0.25);
+    }
+  }
+
+  &__img-wrapper {
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__panel {
+    padding: 10px;
+    display: flex;
+    gap: 12px;
+    line-height: 0;
+    min-width: 212px;
+    border-radius: 25px;
+    background-color: #fff;
+    box-shadow: 0 5px 30px rgba(152, 152, 152, 0.2);
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .3s;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background-color: #ececec;
+    }
+
+    &::before {
+      left: 70px;
+    }
+
+    &::after {
+      right: 70px;
+    }
+  }
+
+  &__panel-link {
+    padding: 5px 16px;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    path {
+      transition: all .3s;
+    }
+  }
+
+  &__panel-link:hover {
+    
+    path {
+      fill: $accent-color;
+    }
+  }
+
+  &__rating {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 22px;
+    color: $accent-text;
+    @extend %roboto-400;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    gap: 20px
+  }
+
+  &__new-price {
+    @extend %roboto-500;
+    color: $accent-text;
+  }
+
+  &__old-price {
+    @extend %roboto-400;
+    text-decoration: line-through;
+  }
+}

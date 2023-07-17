@@ -33,3 +33,12 @@ $bg-color: #f6f6f6;
     background-color: darken($accent-color, 10%);
   }
 }
+
+%btn-transparent {
+  padding: 14px 36px;
+  text-transform: uppercase;
+  @extend %roboto-400;
+  color: $accent-text;
+  transition: all .3s;
+  border: 1px solid $accent-color;
+}
