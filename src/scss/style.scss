@@ -631,3 +631,70 @@
     text-decoration: line-through;
   }
 }
+
+.promo {
+  background-color: $bg-color;
+  background-image: url('../images/promo-bg.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+
+  &__inner {
+    padding: 160px 0;
+    max-width: 570px;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    color: $accent-color;
+    @extend %roboto-500;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__timer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__timer-box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(187, 187, 187, 0.3);
+    line-height: 1;
+    margin-bottom: 60px;
+  }
+
+  &__days,
+  &__hours,
+  &__minutes,
+  &__seconds {
+    @extend %roboto-700;
+    color: $accent-text;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  &__button {
+    @extend %btn-transparent;
+  }
+}
+
+.partners {
+  padding: 120px 0 60px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
