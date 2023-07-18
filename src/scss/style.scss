@@ -698,3 +698,115 @@
     justify-content: space-between;
   }
 }
+
+.blog {
+  padding: 60px 0 160px;
+  background-image: url('../images/blog/blog-decor-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center 80%;
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 126px;
+      height: 53px;
+      top: -30px;
+      right: -27px;
+      background-image: url('../images/blog/blog-decor-after.svg');
+      z-index: -1;
+    }
+  }
+
+  &__item {
+    max-width: 370px;
+    outline: 1px solid #ececec;
+    background-color: #ffffff;
+
+    &:hover {
+      outline: none;
+      box-shadow: 20px 0 60px rgba(202, 202, 202, 0.35);
+    }
+  }
+
+  &__item-img {
+    object-fit: cover;
+    height: 288px;
+  }
+
+  &__item-box {
+    padding: 30px 40px;
+  }
+
+  &__item-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__item-user,
+  &__item-date {
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  &__item-user::before,
+  &__item-date::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__item-user::before {
+    background-image: url('../images/blog/user-gray.svg');
+  }
+
+  &__item-date::before {
+    background-image: url('../images/blog/clock.svg');
+  }
+
+  &__item-title {
+    font-size: 22px;
+    @extend %roboto-400;
+    color: $accent-text;
+    margin-bottom: 20px;
+  }
+
+  &__item-link {
+    position: relative;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 8px;
+      top: 7px;
+      right: -15px;
+      background-image: url('../images/blog/arrow-gray.svg');
+    }
+
+    &:hover {
+      color: $accent-color;
+
+      &::after {
+        background-image: url('../images/blog/arrow-accent.svg');
+      }
+    }
+  }
+}
