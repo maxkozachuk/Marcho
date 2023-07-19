@@ -870,7 +870,7 @@
       margin-bottom: 50px;
     }
     
-    &:nth-child(3) {
+    &:last-of-type {
       margin-bottom: 15px;
     }
   }
@@ -910,5 +910,9 @@
     &:hover {
       color: $accent-color;
     }
+  }
+
+  &__text {
+    margin-bottom: 25px;
   }
 }
