@@ -275,7 +275,7 @@
   background-image: url('../images/info-categories/decor-left.svg'), url('../images/info-categories/decor-right.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: -45px center, 104% center;
-  
+
 
   &__inner {
     display: flex;
@@ -351,7 +351,7 @@
   &__grid-item:nth-child(1) {
     grid-row: span 2;
   }
-  
+
   &__grid-item:nth-child(2) {
     grid-column: span 2;
     padding-top: 0;
@@ -597,7 +597,7 @@
   }
 
   &__panel-link:hover {
-    
+
     path {
       fill: $accent-color;
     }
@@ -762,7 +762,7 @@
     padding-left: 30px;
     position: relative;
   }
-  
+
   &__item-user::before,
   &__item-date::before {
     content: '';
@@ -790,7 +790,7 @@
 
   &__item-link {
     position: relative;
-  
+
     &::after {
       content: '';
       position: absolute;
@@ -807,6 +807,108 @@
       &::after {
         background-image: url('../images/blog/arrow-accent.svg');
       }
+    }
+  }
+}
+
+.top {
+
+  &__container {
+    padding: 136px 0 140px;
+    max-width: 1700px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+}
+
+.modal {
+  padding: 120px 0;
+
+  &__inner {
+    max-width: 570px;
+    margin: 0 auto;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+  }
+
+  &__link {
+    font-size: 22px;
+    @extend %roboto-400;
+    color: #909090;
+    text-transform: uppercase;
+    transition: all .3s;
+
+    &--active {
+      @extend %roboto-700;
+      color: $accent-color;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__label {
+    display: block;
+
+    &:first-child {
+      margin-bottom: 35px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 50px;
+    }
+    
+    &:nth-child(3) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 12px 18px;
+    line-height: 36px;
+    background-color: $bg-color;
+    margin-top: 8px;
+  }
+
+  &__input-checkbox {
+    accent-color: $accent-color;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    border: none;
+    background-color: $accent-text;
+    text-transform: uppercase;
+    color: #fff;
+    @extend %roboto-400;
+    letter-spacing: 3.2px;
+    line-height: 36px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  &__lost-password-link {
+    transition: all .3s;
+
+    &:hover {
+      color: $accent-color;
     }
   }
 }
