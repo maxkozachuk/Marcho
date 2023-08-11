@@ -19,6 +19,7 @@ $main-text: #8d8d8d;
 
 $accent-color: #fe3e57;
 $bg-color: #f6f6f6;
+$border-color: #ececec;
 
 %btn {
   padding: 14px 36px;
@@ -41,4 +42,27 @@ $bg-color: #f6f6f6;
   color: $accent-text;
   transition: all .3s;
   border: 1px solid $accent-color;
+}
+
+%btn-black {
+  border: none;
+  padding: 12px 40px;
+  @extend %roboto-400;
+  background-color: $accent-text;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    background-color: $accent-color;
+    box-shadow: 0 7px 20px rgba(255, 17, 48, 0.3);
+  }
+}
+
+%hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

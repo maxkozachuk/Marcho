@@ -1,4 +1,26 @@
-$(function() {
+$(function () {
+
+  $('.filter-content__btn').on('click', function() {
+    $('.filter-content__btn').removeClass('filter-content__btn--active');
+    $(this).addClass('filter-content__btn--active');
+  });
+  
+  $('.filter-content__btn--list').on('click', function() {
+    $('.product-item').addClass('product-item--list');
+    $('.shop__items').removeClass('shop__items--grid');
+  });
+  
+  $('.filter-content__btn--grid').on('click', function() {
+    $('.product-item').removeClass('product-item--list');
+    $('.shop__items').addClass('shop__items--grid');
+  });
+  
+  $('.pagination__link').on('click', function() {
+    $('.pagination__link').removeClass('pagination__link--active');
+    $(this).addClass('pagination__link--active');
+  });
+  
+  $('.filter-content__select').styler();
 
   $('.top-slider__inner').slick({
     arrows: false,
@@ -15,10 +37,27 @@ $(function() {
     readOnly: true
   });
 
+  $(".price-filter__input").ionRangeSlider({
+    type: "double",
+    prefix: "$",
+    hide_min_max: true,
+    hide_from_to: true,
+
+    onStart: function (data) {
+      $('.price-filter__price-from').text(data.from);
+      $('.price-filter__price-to').text(data.to);
+    },
+
+    onChange: function (data) {
+      $('.price-filter__price-from').text(data.from);
+      $('.price-filter__price-to').text(data.to);
+    }
+  });
+
 });
 
 Fancybox.bind('[data-fancybox]', {
-  
+
 });
 
 function getTimeRemaining(endtime) {
@@ -27,7 +66,7 @@ function getTimeRemaining(endtime) {
   const minutes = Math.floor((total / 1000 / 60) % 60);
   const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
   const days = Math.floor(total / (1000 * 60 * 60 * 24));
-  
+
   return {
     total,
     days,
