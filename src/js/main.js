@@ -1,26 +1,37 @@
 $(function () {
 
-  $('.filter-content__btn').on('click', function() {
+  $('.product__tabs-title').on('click', function (e) {
+    e.preventDefault();
+    $('.product__tabs-title').removeClass('product__tabs-title--active');
+    $(this).addClass('product__tabs-title--active');
+    $('.product__tabs-item').removeClass('product__tabs-item--active');
+    $($(this).attr('href')).addClass('product__tabs-item--active');
+
+  });
+
+  $('.filter-content__btn').on('click', function () {
     $('.filter-content__btn').removeClass('filter-content__btn--active');
     $(this).addClass('filter-content__btn--active');
   });
-  
-  $('.filter-content__btn--list').on('click', function() {
+
+  $('.filter-content__btn--list').on('click', function () {
     $('.product-item').addClass('product-item--list');
     $('.shop__items').removeClass('shop__items--grid');
   });
-  
-  $('.filter-content__btn--grid').on('click', function() {
+
+  $('.filter-content__btn--grid').on('click', function () {
     $('.product-item').removeClass('product-item--list');
     $('.shop__items').addClass('shop__items--grid');
   });
-  
-  $('.pagination__link').on('click', function() {
+
+  $('.pagination__link').on('click', function () {
     $('.pagination__link').removeClass('pagination__link--active');
     $(this).addClass('pagination__link--active');
   });
-  
+
   $('.filter-content__select').styler();
+  
+  $('.product__control-input').styler();
 
   $('.top-slider__inner').slick({
     arrows: false,
@@ -30,7 +41,23 @@ $(function () {
     autoplaySpeed: 2000
   });
 
-  $(".product-item__rating").rateYo({
+  $('.product-slide__thumb').slick({
+    asNavFor: '.product-slide__big',
+    focusOnSelect: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    draggable: false,
+    vertical: true
+  });
+  
+  $('.product-slide__big').slick({
+    asNavFor: '.product-slide__thumb',
+    arrows: false,
+    draggable: false,
+    fade: true
+  });
+
+  $(".product-item__rating, .product__rating, .review__rating").rateYo({
     starWidth: "18px",
     normalFill: "#ccccce",
     ratedFill: "#ffc35b",

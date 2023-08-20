@@ -1366,6 +1366,7 @@
     .product-item__title {
       order: -3;
       width: 100%;
+      @extend %roboto-500;
     }
 
     .product-item__price {
@@ -1447,6 +1448,555 @@
       width: 5px;
       right: 0;
       background-image: url('../images/icons/next-arrow.svg');
+    }
+  }
+}
+
+.product-page {
+  padding: 120px 0 0;
+}
+
+.product {
+
+  &__inner {
+    display: flex;
+    margin-bottom: 110px;
+  }
+
+  &__slide {
+    width: 730px;
+    display: flex;
+    margin-right: 70px;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: 34px;
+    @extend %roboto-500;
+    color: $accent-text;
+    margin-bottom: 10px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__price {
+    font-size: 18px;
+    line-height: 34px;
+    display: flex;
+    gap: 15px;
+  }
+
+  &__new-price {
+    color: $accent-text;
+  }
+
+  &__old-price {
+
+    span {
+      text-decoration: line-through;
+    }
+  }
+
+  &__rating {
+    margin-left: auto;
+    margin-right: 5px;
+
+    &-quantity {
+      color: $accent-text;
+      font-size: 18px;
+      line-height: 34px;
+    }
+  }
+
+  &__review-title {
+    @extend %roboto-400;
+    font-size: 18px;
+    color: $accent-text;
+    margin-bottom: 5px;
+  }
+
+  &__review-text {
+    margin-bottom: 30px;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 20px;
+
+    &-list {
+      padding: 5px !important;
+    }
+
+    &-list:first-child {
+      color: $accent-text;
+      margin-right: 10px;
+    }
+  }
+
+  &__info-item {
+
+    .footer-top__socials {
+      margin-top: 0;
+    }
+  }
+}
+
+.product-slide {
+
+  &__thumb {
+    width: 140px;
+    margin-right: 30px;
+  }
+
+  &__thumb-item {
+    width: 140px;
+    height: 140px;
+  }
+
+  &__big {
+    width: 560px;
+  }
+
+  &__big-item {
+    height: 650px;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+.product-slide__thumb .slick-slide {
+  border: none;
+
+  div {
+    height: 140px;
+    margin-bottom: 30px;
+  }
+}
+
+.product-slide__big div {
+  height: 650px;
+}
+
+.filter-color {
+  margin-bottom: 38px;
+
+  &__title {
+    font-size: 18px;
+    @extend %roboto-400;
+    color: $accent-text;
+    margin-bottom: 14px;
+  }
+
+  &__form {
+    display: flex;
+    gap: 16px;
+    padding-left: 5px;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__input {
+    @extend %hidden-input;
+
+    &:checked+.filter-color__fake-radio {
+
+      &::after {
+        border-color: $accent-color;
+      }
+    }
+  }
+
+  &__fake-radio {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    // position: absolute;
+    position: relative;
+    display: block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 1px solid $border-color;
+      top: -25%;
+      left: -25%;
+    }
+  }
+}
+
+.filter-size {
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 18px;
+    @extend %roboto-400;
+    color: $accent-text;
+    margin-bottom: 5px;
+  }
+
+  &__form {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__input {
+    @extend %hidden-input;
+
+    &:checked+.filter-size__fake-radio {
+      border-color: $accent-color;
+    }
+  }
+
+  &__fake-radio {
+    padding: 6px 4px;
+    border: 1px solid $border-color;
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+  }
+
+  &__text {
+    text-transform: uppercase;
+  }
+}
+
+.product__control-form {
+  display: flex;
+  gap: 15px;
+}
+
+.product__control-input {
+  color: $accent-text;
+  width: 100%;
+}
+
+.product__control-btn {
+  @extend %btn;
+  border: none;
+  cursor: pointer;
+  text-transform: none;
+  padding: 12px 40px;
+}
+
+.jq-number {
+  padding: 12px 0;
+  position: relative;
+  width: 115px;
+  max-height: 50px;
+  border: 1px solid $border-color;
+}
+
+.jq-number__field {
+
+  input {
+    text-align: center;
+    padding: 0 38px;
+    border: none;
+    outline: none;
+  }
+}
+
+.jq-number__spin.minus,
+.jq-number__spin.plus {
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.jq-number__spin.minus {
+  left: 0;
+  background-image: url('../images/icons/minus.svg');
+}
+
+.jq-number__spin.plus {
+  right: 0;
+  background-image: url('../images/icons/plus.svg');
+}
+
+.product {
+
+  &__tabs {
+    padding-bottom: 60px;
+    border-bottom: 1px solid $border-color;  
+  }
+
+  &__tabs-top {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__tabs-title {
+    font-size: 22px;
+    @extend %roboto-400;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+
+    &--active {
+      color: $accent-text;
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        bottom: -11px;
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  &__tabs-item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.review {
+
+  &__items {
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:last-of-type) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__userpic {
+    min-width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 30px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__username {
+    color: $accent-text;
+    @extend %roboto-400;
+    margin-right: 15px;
+  }
+
+  &__date {
+    padding-left: 16px;
+    position: relative;
+
+    &::before {
+      content: '|';
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__rating {
+    margin-left: auto;
+  }
+
+  &__text {
+    margin-bottom: 8px;
+  }
+
+  &__reply {
+    position: relative;
+    padding-left: 26px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 14px;
+      left: 0;
+      top: 3px;
+      background-image: url('../images/icons/reply.svg');
+    }
+
+    &:hover {
+      color: $accent-text;
+    }
+  }
+}
+
+.review-form {
+
+  &__title {
+    font-size: 22px;
+    line-height: 28px;
+    @extend %roboto-400;
+    color: $accent-text;
+    padding-bottom: 16px;
+    position: relative;
+    margin-bottom: 35px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background-color: $accent-color;
+    }
+  }
+
+  &__star {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 25px;
+  }
+
+  &__star-title {
+    margin-right: 32px;
+    color: $accent-text;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__input-radio {
+    @extend %hidden-input;
+
+    &:checked+.review-form__fake-radio {
+
+      path {
+        fill: #ffc35b;
+      }
+    }
+  }
+
+  &__fake-radio {
+    display: flex;
+    gap: 1px;
+
+    path {
+      fill: #ccccce;
+      transition: all .3s;
+    }
+
+    &:hover {
+
+      path {
+        fill: #ffc35b;
+      }
+    }
+  }
+
+  &__input-box {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 28px;
+  }
+
+  &__input {
+    max-width: 570px;
+    width: 100%;
+    border: 1px solid $border-color;
+    padding: 11px 20px;
+  }
+
+  &__textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    border: 1px solid $border-color;
+    padding: 11px 20px;
+    min-height: 225px;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    @extend %btn;
+    border: none;
+    cursor: pointer;
+    text-transform: none;
+    padding: 12px 40px;
+    text-transform: uppercase;
+  }
+}
+
+.related-products {
+  padding: 60px 0 120px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  .product-item {
+    max-width: 270px;
+
+    &__img-wrapper {
+      max-height: 270px;
+      margin-bottom: 20px;
+    }
+
+    &__panel {
+      display: none;
+    }
+
+    &__title {
+      font-size: 18px;
+      @extend %roboto-400;
+      margin-bottom: 6px;
+    }
+
+    &__price {
+      @extend %quicksand-500;
+    }
+
+    &__new-price {
+      font-family: inherit;
+    }
+
+    &__old-price {
+      font-family: inherit;
+      font-weight: inherit;
+      order: -1;
     }
   }
 }
