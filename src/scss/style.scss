@@ -754,6 +754,7 @@
   &__img {
     object-fit: cover;
     height: 288px;
+    width: 100%;
   }
 
   &__box {
@@ -788,6 +789,11 @@
 
   &__date::before {
     background-image: url('../images/blog/clock.svg');
+  }
+
+  &__img-link,
+  &__title-link {
+    display: block;
   }
 
   &__title {
