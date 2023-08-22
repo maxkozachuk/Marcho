@@ -796,11 +796,14 @@
     display: block;
   }
 
+  &__title-link {
+    margin-bottom: 20px;
+  }
+
   &__title {
     font-size: 22px;
     @extend %roboto-400;
     color: $accent-text;
-    margin-bottom: 20px;
   }
 
   &__link {
