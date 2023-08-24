@@ -4,9 +4,6 @@
 @import 'libs';
 @import 'global';
 
-
-@import 'media';
-
 .header {
   padding: 40px 0;
 
@@ -22,6 +19,41 @@
 }
 
 .menu {
+
+  &__btn {
+    display: none;
+    padding: 0;
+    border: none;
+    position: relative;
+    width: 30px;
+    height: 26px;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $accent-text;
+      transition: all .5s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    div {
+      height: 3px;
+      background-color: $accent-text;
+      transition: all .5s;
+    }
+  }
 
   &__list {
     display: flex;
@@ -86,6 +118,7 @@
   padding: 76px 0 40px;
   border-bottom: 1px solid #ececec;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 
   &__column {
@@ -177,6 +210,7 @@
   justify-content: space-between;
   font-size: 12px;
   padding: 28px 0;
+  flex-wrap: wrap;
 
   &__payments {
     display: flex;
@@ -2475,3 +2509,5 @@
     }
   }
 }
+
+@import 'media';
