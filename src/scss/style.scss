@@ -876,6 +876,7 @@
 
   &__title {
     margin-bottom: 30px;
+    line-height: 56px;
   }
 }
 
@@ -2129,7 +2130,7 @@
 
   .blog-item__info {
     justify-content: start;
-    gap: 34px;
+    column-gap: 34px;
   }
 
   .blog-item__title-link {
