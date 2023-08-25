@@ -304,6 +304,22 @@
       gap: 8px;
     }
   }
+
+  .top__container {
+    padding: 70px 0;
+  }
+
+  .modal {
+    padding: 60px 0;
+
+    &__links {
+      margin-bottom: 25px;
+    }
+
+    .modal__label {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media (max-width: 552px) {
