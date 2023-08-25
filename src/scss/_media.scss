@@ -22,6 +22,13 @@
       right: 0;
     }
   }
+
+  .page-404 {
+
+    &__img {
+      max-width: 50%;
+    }
+  }
 }
 
 @media (max-width: 1168px) {
@@ -227,6 +234,9 @@
     }
   }
 
+  .page-404 {
+    padding: 60px 0;
+  }
 }
 
 @media (max-width: 648px) {
@@ -318,6 +328,14 @@
 
     .modal__label {
       margin-bottom: 20px;
+    }
+  }
+
+  .page-404 {
+
+    &__title {
+      font-size: 36px;
+      line-height: 42px;
     }
   }
 }
@@ -453,6 +471,28 @@
     }
   }
 
+  .page-404 {
+
+    &__inner {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__content {
+      margin-right: 0;
+      max-width: 100%;
+    }
+
+    &__text {
+      margin-bottom: 30px;
+    }
+
+    &__button {
+      display: block;
+      max-width: fit-content;
+      margin: 0 auto;
+    }
+  }
 }
 
 @media (max-width: 472px) {
