@@ -1010,6 +1010,12 @@
     gap: 30px;
     align-items: start;
   }
+
+  &__filters-btn {
+    display: none;
+    @extend %btn;
+    border: none;
+  }
 }
 
 .filters {
