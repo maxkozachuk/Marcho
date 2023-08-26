@@ -69,7 +69,17 @@ $(function () {
     asNavFor: '.product-slide__thumb',
     arrows: false,
     draggable: false,
-    fade: true
+    fade: true,
+    responsive: [
+      {
+        breakpoint: 1168,
+        settings: {
+          draggable: true,
+          fade: false,
+          infinite: false
+        }
+      }
+    ]
   });
 
   $(".product-item__rating, .product__rating, .review__rating").rateYo({
